@@ -16,3 +16,7 @@ pnpm run build
 ```
 
 Preview the production build with `pnpm run preview`.
+
+## Usefull links
+
+* [Icons](https://carbon-icons-svelte.onrender.com/)
