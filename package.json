@@ -15,9 +15,9 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest"
 	},
-  "dependencies": {
-		"geo-web-lib": "^0.1.0"
-  },
+	"dependencies": {
+		"geo-web-lib": "^0.2.0"
+	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^2.0.0",

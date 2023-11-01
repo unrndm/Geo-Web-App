@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   geo-web-lib:
-    specifier: ^0.1.0
-    version: 0.1.0
+    specifier: ^0.2.0
+    version: 0.2.0
 
 devDependencies:
   '@playwright/test':
@@ -1421,8 +1421,8 @@ packages:
     dev: true
     optional: true
 
-  /geo-web-lib@0.1.0:
-    resolution: {integrity: sha512-s7Di+8jfsDRwTXjhX1mCvpHnwmz02AC/4SSjjcTxnSI6QoVAzSZA8/L3YbQufrs1ffgpQ9gqbQZDAi3/hkbG/A==}
+  /geo-web-lib@0.2.0:
+    resolution: {integrity: sha512-Qou9rK2BbDfk7LWIBxdaEJWDcafJMNNHPPyUDoTzlaMqRhfmXDCeMVUxfP+0k3dyRjFasO6hMstNtt66fdUryA==}
     dev: false
 
   /get-func-name@2.0.2:
