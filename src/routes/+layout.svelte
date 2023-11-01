@@ -16,8 +16,6 @@
     Column
   } from "carbon-components-svelte";
 
-  export const prerender = true;
-
   let isSideNavOpen = false;
 </script>
 
