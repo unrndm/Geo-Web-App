@@ -43,7 +43,7 @@ devDependencies:
     version: 2.34.0(eslint@8.52.0)(svelte@4.2.2)
   geo-web-lib:
     specifier: ^0.1.0
-    version: 0.1.0
+    version: link:../geo-web-lib/pkg
   prettier:
     specifier: ^2.8.0
     version: 2.8.8
@@ -1418,10 +1418,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /geo-web-lib@0.1.0:
-    resolution: {integrity: sha512-s7Di+8jfsDRwTXjhX1mCvpHnwmz02AC/4SSjjcTxnSI6QoVAzSZA8/L3YbQufrs1ffgpQ9gqbQZDAi3/hkbG/A==}
-    dev: true
 
   /get-func-name@2.0.2:
     resolution: {integrity: sha512-8vXOvuE167CtIc3OyItco7N/dpRtBbYOsPsXCz7X/PMnlGjYjSGuZJgM1Y7mmew7BKf9BqvLX2tnOVy1BBUsxQ==}

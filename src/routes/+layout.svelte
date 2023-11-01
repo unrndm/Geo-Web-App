@@ -4,8 +4,21 @@
   // import { Theme } from "carbon-components-svelte";
   // import type { CarbonTheme } from "carbon-components-svelte/types/Theme/Theme.svelte";
   // let theme: CarbonTheme;
+  import {
+    Header,
+    HeaderNav,
+    HeaderNavItem,
+    HeaderNavMenu,
+    SkipToContent,
+    Content,
+    Grid,
+    Row,
+    Column
+  } from "carbon-components-svelte";
 
   export const prerender = true;
+
+  let isSideNavOpen = false;
 </script>
 
 <!-- <div style="display: inline-block">
@@ -25,4 +38,24 @@
   </Theme>
 </div> -->
 
-<slot />
+<Header company="unrndm" platformName="geo-web-lib demo" bind:isSideNavOpen>
+  <svelte:fragment slot="skip-to-content">
+    <SkipToContent />
+  </svelte:fragment>
+  <!-- <HeaderNav>
+    <HeaderNavItem href="/" text="Link 1" />
+    <HeaderNavItem href="/" text="Link 2" />
+    <HeaderNavItem href="/" text="Link 3" />
+    <HeaderNavMenu text="Menu">
+      <HeaderNavItem href="/" text="Link 1" />
+      <HeaderNavItem href="/" text="Link 2" />
+      <HeaderNavItem href="/" text="Link 3" />
+    </HeaderNavMenu>
+  </HeaderNav> -->
+</Header>
+
+<Content>
+  <Grid padding={true}>
+    <slot />
+  </Grid>
+</Content>
