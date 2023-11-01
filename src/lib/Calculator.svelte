@@ -2,15 +2,30 @@
   import { Calculator } from "geo-web-lib";
   import { Row, Column, TextArea, Button, SkipToContent } from "carbon-components-svelte";
 
-  let calculator = new Calculator();
-  let A: undefined | string,
-    B: undefined | string = undefined;
+  // let canvasElement: HTMLCanvasElement;
 
-  let HandleInput = (var_name: string) => (e: Event) => {
-    calculator.add_variable_from_wkt(var_name, (e.target as HTMLTextAreaElement)?.value || "");
+  let calculator = new Calculator();
+  let wkt: string;
+  let HandleInput = (e: Event) => {
+    wkt = (e.target as HTMLTextAreaElement)?.value || "";
   };
-  let calculation_result: string | undefined = undefined;
-  let HandleCalculate = (e: Event) => (calculation_result = calculator.calculate("geomdiff"));
+
+  let rasterization_result: string | undefined = undefined;
+  let HandleCalculate = async (e: Event) => {
+    let data = calculator.rasterize(wkt);
+    rasterization_result = JSON.stringify(data);
+    // let w = data.at(-2)!;
+    // let new_data = data.slice(0, -2);
+    // rasterization_result = JSON.stringify({
+    //   width: w,
+    //   pixels: new_data
+    // });
+    // let h = Math.round(new_data.length / w);
+    // for (let index = 0; index < w; index++) {
+    // const element = array[index];
+    // }
+    // console.log(h, w, new_data);
+  };
 </script>
 
 <Row>
@@ -18,29 +33,20 @@
     <TextArea
       hideLabel
       labelText="A variable WKT definition"
-      placeholder="Enter A WKT definition..."
-      on:change={HandleInput("A")}
-    />
-  </Column>
-  <Column>
-    <TextArea
-      hideLabel
-      labelText="B variable WKT definition"
-      placeholder="Enter B WKT definition..."
-      on:change={HandleInput("B")}
+      placeholder="Enter WKT definition..."
+      on:click={HandleInput}
     />
   </Column>
 </Row>
 <Row>
   <Column>
     <SkipToContent />
-    <Button on:click={HandleCalculate}>Compute GeomDiff</Button>
+    <Button on:click={HandleCalculate}>Rasterize</Button>
   </Column>
 </Row>
-{#if calculation_result}
-  <Row>
-    <Column>
-      <TextArea disabled labelText="Computation result:" value={calculation_result} />
-    </Column>
-  </Row>
-{/if}
+<Row>
+  <Column>
+    <!-- <canvas bind:this={canvasElement} /> -->
+    <TextArea disabled labelText="Rasterization result:" value={rasterization_result} />
+  </Column>
+</Row>
