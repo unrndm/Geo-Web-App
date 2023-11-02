@@ -14,7 +14,7 @@
   let canvasElement: HTMLCanvasElement;
 
   let calculator = new Calculator();
-  // @hmr:keep
+
   let wkt: string = "LINESTRING (-1 -1, 4 4)";
 
   let rasterization_result: string | undefined = undefined;
@@ -70,8 +70,5 @@
   </Column>
 </Row>
 <Row>
-  <!-- <Column> -->
-  <!-- <TextArea disabled labelText="Rasterization result:" value={rasterization_result} /> -->
   <canvas bind:this={canvasElement} style="flex-grow: 1;" />
-  <!-- </Column> -->
 </Row>
