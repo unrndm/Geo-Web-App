@@ -22,7 +22,7 @@
     let ctx = canvasElement.getContext("2d")!;
     ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
-    let raw_data = calculator.rasterize(wkt);
+    let raw_data = calculator.rasterize_line(wkt);
     let [w, h, ...clipped_data] = raw_data;
 
     let data = new Uint8ClampedArray(clipped_data);
