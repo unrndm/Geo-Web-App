@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Calculator } from "$lib";
+  import { Rasterizer } from "$lib";
 </script>
 
-<Calculator />
+<Rasterizer />

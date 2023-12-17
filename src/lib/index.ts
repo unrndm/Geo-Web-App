@@ -1,1 +1,1 @@
-export { default as Calculator } from "./Calculator.svelte";
+export { default as Rasterizer } from "./Rasterizer.svelte";
